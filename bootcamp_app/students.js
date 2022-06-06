@@ -19,7 +19,6 @@ WHERE cohorts.name LIKE $1
 LIMIT $2;
 `
 pool.query(queryString, values)
-
 .then(res => {
   res.rows.forEach(user => {
     console.log(`${user.name} has an id of ${user.student_id} and was in the ${user.cohort} cohort`);
